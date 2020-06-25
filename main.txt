@@ -1,0 +1,199 @@
+Assessment Problems: VIth Sem
+Ques:1
+Kanika and Harshita are playing a coin game. They are given n coins with values x1, x2 …. xn where 'n' is always even. They take alternate terms. In each turn, a player picks either the first coin or the last coin from the row and removes it from the row. The value of coin is received by that player. Determine the maximum value that Piyush can win with if he moves first. Both the players play optimally.
+Input Format
+First line contains the number of coins 'n'.
+Second line contains n space separated integers where ith index denotes the value of ith coin.
+Constraints
+1 < N <= 30, N is always even
+0 <= Ai <= 1000000
+Output Format
+Print a single line with the maximum possible value that Kanika can win with.
+Sample Input
+4
+1 2 3 4
+Sample Output
+6
+Explanation
+Kanika will pick the coin 4. Then Harshita can pick either 1 or 3. In both the cases Kanika picks coin 2 and wins with a total of 6.
+Ques:2
+Take as input N, the size of a chess board. We are asked to place N number of Knights in it, so that no knight can kill other.
+a. Write a recursive function which returns the count of different distinct ways the knights can be placed across the board. Print the value returned.
+b.Write a recursive function which prints all valid configurations (void is the return type for function).
+Input Format
+Enter the size of the chessboard N
+Constraints
+None
+Output Format
+Display the number of ways a knight can be placed and print all the possible arrangements in a space separated manner
+Sample Input
+2
+Sample Output
+
+{0-0} {0-1}  {0-0} {1-0}  {0-0} {1-1}  {0-1} {1-0}  {0-1} {1-1}  {1-0} {1-1} 
+
+6
+Ques:3
+You are given an N*M grid. Each cell (i,j) in the grid is either blocked, or empty. The rat can move from position (i,j), down or right on the grid.
+Initially rat is on the position (1,1). It wants to reach position (N,M). Find the rightmost path through which, rat can reach this position. A path is rightmost, if the rat is at position (i,j), it will always move to (i,j+1), if there exists a path from (i,j+1) to (N,M).
+Input Format
+First line contains 2 integers, N and M, denoting the rows and columns in the grid. Next N line contains. M characters each. An 'X' in position (i,j) denotes that the cell is blocked and ans 'O' denotes that the cell is empty.
+Constraints
+1<=N,M<=1000 GRID(i,j)='X' or 'O'
+Output Format
+If a solution exists: Print N lines, containing M integers each. A 1 at a position (i,j) denotes that the (i,j)th cell is covered in the path and a 0 denotes that the cell is not covered in the path.
+If solution doesn't exist, just print "-1".
+Sample Input
+5 4
+OXOO
+OOOX
+OOXO
+XOOO
+XXOO
+Sample Output
+1 0 0 0 
+1 1 0 0 
+0 1 0 0 
+0 1 1 1 
+0 0 0 1 
+
+Ques:4
+You are given a one dimensional array that may contain both positive and negative integers, find the sum of contiguous subarray of numbers which has the largest sum. For example, if the given array is {-2, -5, 6, -2, -3, 1, 5, -6}, then the maximum subarray sum is 7. NOTE:- please solve this problem using Divide and Conquer And  kadane's algorithm both.
+Input Format
+The first line consists of number of test cases T. Each test case consists of N followed by N integers.
+Constraints
+1 <= N <= 100000 1 <= t <= 20 0 <= A[i] <= 100000000
+Output Format
+The maximum subarray sum
+Sample Input
+2
+4
+1 2 3 4
+3
+-10 5 10
+Sample Output
+10
+15
+
+Ques:5
+This year when Students visited DCE for DRONTECH 2019. He and GOPI started discussing few problems on divide and conquer. Student asked GOPI that if you have 2 strings s1 and s2 can you find if they are equivalent. GOPI then asked the condition for being equivalent to which student replied
+Two strings a and b of equal length are called equivalent in one of the two cases:
+They are equal.
+If we split string a into two halves of the same size a1 and a2, and string b into two halves of the same size b1 and b2, then one of the following is correct:
+a1 is equivalent to b1, and a2 is equivalent to b2
+a1 is equivalent to b2, and a2 is equivalent to b1
+GOPI quickly solved the problem can you?
+Input Format
+First line is number of test cases t Then follow two strings each of same length
+Constraints
+1 <= test cases <= 10 1 <= string length <= 50000
+Output Format
+print "YES" if they are "equivalent" and "NO" if they are not
+Sample Input
+3
+ababa
+baaba
+ab
+ba
+abc
+abc
+Sample Output
+NO
+YES
+YES
+Explanation
+test case 1 : - you cannot split the string into two halves of same size and s1 != s2 hence they are not same test case 2 :- split ab as a and b and ba as b and a then condition is fulfilled test case 3 :- they are already same
+
+
+Ques:6
+Given n friends, each one can remain single or can be paired up with some other friend. Each friend can be paired only once. Find out the total number of ways in which friends can remain single or can be paired up.
+Input Format
+First line contains an integer t denoting the number of test cases. Next t lines contain an integer n each.
+Constraints
+1<= n < 30
+Output Format
+Output t lines each line describing the answer.
+Sample Input
+1
+3
+Sample Output
+4
+Explanation
+{1}, {2}, {3} : all single {1}, {2,3} : 2 and 3 paired but 1 is single. {1,2}, {3} : 1 and 2 are paired but 3 is single. {1,3}, {2} : 1 and 3 are paired but 2 is single. Note that {1,2} and {2,1} are considered same.
+
+Ques:7
+Given a string containing duplicates, print all its distinct permutations such that there are no duplicate permutations and all permutations are printed in a lexicographic order.
+Input Format
+The first and only line of the test case contains the input string.
+Constraints
+Length of the string <= 8
+Output Format
+Print all the distinct permutations in a lexicographic order such that each permutation is in a new line. Note that there should not be any duplicate permutations.
+Sample Input
+ABA
+Sample Output
+AAB
+ABA
+BAA
+Explanation
+The possible permutations for the given string are { "AAB" , "AAB" , "ABA" , "BAA" } . We skip the repeating "AAB" permutation and only print it in once. Also we print the final output in lexicographical order.
+
+Ques:8
+Abhishek is a very passionate about sets. Lately, he is busy solving one of the problems on sets. He has to find whether if the sum of any of the non-empty subsets of the set A is zero.
+Input Format
+The first line contains an integer T, which is the total number of test cases.
+T test cases follow.
+Each test case consists of two lines.
+The first line consists of a single integer N, which is the number of elements present in the set A.
+The second line contains N space separated integers denoting the elements of the set A.
+Constraints
+1 ≤ T ≤10
+1 ≤ N ≤ 4
+-10^5 ≤ A[i] ≤ 10^5
+Output Format
+Print the answer for each testcase in a new line.
+If the sum of any of the subset is zero, then print “Yes” (without quotes) else print “No”(without quotes).
+Sample Input
+1
+4
+1 3 2 -3
+Sample Output
+Yes
+Explanation
+The sum of the subset {3,-3} is zero.
+
+Ques:9
+Given a floor of size n x m. Find the number of ways to tile the floor with tiles of size 1 x m . A tile can either be placed horizontally or vertically.
+Input Format
+First line of input contains an integer T denoting the number of test cases. Then T test cases follow.
+The first line of each test case contains two integers N and M.
+Constraints
+1 <= T<= 1000
+1 <= N,M <= 100000
+Output Format
+Print answer for every test case in a new line modulo 10^9+7.
+Sample Input
+2
+2 3
+4 4
+Sample Output
+1
+2
+
+Ques:10
+Yash loves to play number games with his friend Harsh. One day they were playing a game where one of them will speak out a positive number and the other have to tell the sum of its factors. The first one to say it correctly wins. After a while they got bored and wanted to try out a different game. Yash then suggested about trying the reverse. That is, given a positive number 'S' , they have to find a number whose factors add up to 'S'. Realizing that this task is tougher than the original task, Yash came to you for help. Luckily Yash owns a portable programmable device and you have decided to burn a program to this device. Given the value of 'S' as input to the program, it will output a number whose sum of factors equal to 'S' .
+Input Format
+There are several cases . Each case of input will consist of a positive integer 'S'<= 100000 . The last case is followed by a value of 0 .
+Constraints
+0 < S <= 10000
+Output Format
+print the integer whose factors sum is equal to 'S'. Print the largest Integer whose factors sum is 'S' . If no such number exists, output '-1' .
+Sample Input
+1
+102
+1000
+0
+Sample Output
+1
+101
+-1
