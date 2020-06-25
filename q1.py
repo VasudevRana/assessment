@@ -34,3 +34,4 @@ while coins != empty:
     p2_selectable()
 
 print(score_1)
+#end
