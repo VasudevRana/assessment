@@ -85,3 +85,4 @@ int main()
 	solveMaze(maze); 
 	return 0; 
 } 
+// not final
