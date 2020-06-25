@@ -1,55 +1,25 @@
-#include <stdio.h> 
-#include <stdlib.h> 
-#include <string.h> 
+def shouldSwap(s, start, curr):
+    for i in range(start, curr):
+        if s[i] == s[curr]:
+            return 0
+    return 1
 
-int compare(const void* a, const void* b) 
-{ 
-    return (*(char*)a - *(char*)b); 
-} 
-void swap(char* a, char* b) 
-{ 
-    char t = *a; 
-    *a = *b; 
-    *b = t; 
-} 
-int findCeil(char str[], char first, int l, int h) 
-{ 
-    int ceilIndex = l;  
-    for (int i = l + 1; i <= h; i++) 
-        if (str[i] > first && str[i] < str[ceilIndex]) 
-            ceilIndex = i; 
-  
-    return ceilIndex; 
-} 
-void sortedPermutations(char str[]) 
-{ 
-    int size = strlen(str); 
-    qsort(str, size, sizeof(str[0]), compare); 
- 
-    bool isFinished = false; 
-    while (!isFinished) { 
-        static int x = 1; 
-        printf("%d  %s \n", x++, str); 
-        
-        int i; 
-        for (i = size - 2; i >= 0; --i) 
-            if (str[i] < str[i + 1]) 
-                break; 
-                
-        if (i == -1) 
-            isFinished = true; 
-        else { 
-            int ceilIndex = findCeil(str, 
-                     str[i], i + 1, size - 1);  
-            swap(&str[i], &str[ceilIndex]);  
-            qsort(str + i + 1, size - i - 1, 
-                  sizeof(str[0]), compare); 
-        } 
-    } 
-} 
-int main() 
-{ 
-    char str[] = "ACBC"; 
-    sortedPermutations(str); 
-    return 0; 
-} 
+def findPermutations(s, index, n):
+    if index >= n:
+        print(''.join(s))
+        return
+
+    for i in range(index, n):
+        check = shouldSwap(string, index, i)
+        if check:
+            string[index], string[i] = string[i], string[index]
+            findPermutations(string, index + 1, n)
+            string[index], string[i] = string[i], string[index]
+
+
+if __name__ == "__main__":
+    string = list(input())
+    if len(string) <= 8:
+        n = len(string)
+        findPermutations(string, 0, n)
+#end
