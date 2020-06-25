@@ -23,3 +23,4 @@ if __name__ == "__main__":
         n = len(string)
         findPermutations(string, 0, n)
 #end
+
