@@ -18,9 +18,8 @@ def findPermutations(s, index, n):
 
 
 if __name__ == "__main__":
-    string = list(input())
+    string = list(input("Enter string \n"))
     if len(string) <= 8:
         n = len(string)
         findPermutations(string, 0, n)
-#end
-
+# end
