@@ -1,7 +1,6 @@
 def countFriendsPairings(n):
     dp = [0 for i in range(n + 1)]
     for i in range(n + 1):
-
         if i <= 2:
             dp[i] = i
         else:
@@ -18,4 +17,4 @@ if __name__ == '__main__':
         if 1 <= n < 30:
             print(countFriendsPairings(n))
         t -= 1
-#end
+# end
