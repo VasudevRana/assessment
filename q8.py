@@ -6,6 +6,10 @@ s3 = set()
 s4 = set()
 s = set()
 
+t1 = 0
+t2 = 0
+t3 = 0
+t4 = 0
 def findsubsets(s, n):
     return list(map(set, itertools.combinations(s, n)))
 
@@ -18,9 +22,21 @@ if 1 <= test_cases <= 10:
 
 
 if __name__ == '__main__':
-      s4 = findsubsets(s, n)
-      s3 = findsubsets(s, n - 1)
-      s2 = findsubsets(s, n - 2)
-      s1 = findsubsets(s, n - 3)
+    s1 = findsubsets(s, n)
+    s2 = findsubsets(s, n - 1)
+    s3 = findsubsets(s, n - 2)
+    s4 = findsubsets(s, n - 3)
 
-print(f" s1 = {s1} \n s2 = {s2} \n s3 = {s3} \n s4 = {s4} \n")
+    if len(s1) != 0:
+        for i in s1:
+            if 
+
+    if len(s2) != 0:
+
+
+    if len(s3) != 0:
+
+
+    if len(s4) != 0:
+
+# print(f" s1 = {s1} \n s2 = {s2} \n s3 = {s3} \n s4 = {s4} \n")
