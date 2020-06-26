@@ -16,12 +16,14 @@ if __name__ == '__main__':
 
 
     ways = []
-    test_cases = int(input())
+    test_cases = int(input("Enter number of test cases \n"))
     if 1 <= test_cases <= 1000:
         for i in range(0, test_cases):
-            n = int(input())
-            m = int(input())
+            n = int(input("Enter n \n"))
+            m = int(input("Enter m \n"))
             if 1 <= n <= 100000 and 1 <= m <= 100000:
                 ways.append(countWays(n, m))
 
+    print()
     print(*ways, sep='\n')
+# end
