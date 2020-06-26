@@ -1,6 +1,6 @@
 if __name__ == '__main__':
     coins = []
-    n = int(input())
+    n = int(input("Enter number of coins \n"))
     score_1 = 0
     score_2 = 0
     empty = []
@@ -35,3 +35,4 @@ if __name__ == '__main__':
         p2_selectable()
 
     print(score_1)
+# end
