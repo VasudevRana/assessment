@@ -18,4 +18,4 @@ if __name__ == '__main__':
         if 1 <= n < 30:
             print(countFriendsPairings(n))
         t -= 1
-# end
+#end
