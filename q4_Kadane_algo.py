@@ -30,4 +30,3 @@ def que_4_kadane_algo():
                   print("The sum of contiguous subset is", kadane(test_list))
 
 que_4_kadane_algo()
-
