@@ -1,63 +1,57 @@
 def que_3_rat_maze():
-      N = int(input())          
-      M = int(input())          
+    N = int(input())
+    M = int(input())
 
-      maze = []
+    main_maze = []
 
-      for row in range(0,N):
-            list1 =[]
-            for cols in range(0,M):
-                  list_elements = int(input())
-                  list1.append(list_elements)
-            maze.append(list1)
-            print("\n")
+    for row in range(0, N):
+        list1 = []
+        for cols in range(0, M):
+            list_elements = int(input())
+            list1.append(list_elements)
+        main_maze.append(list1)
+        print("\n")
+    print(main_maze)
 
-      print(maze)
-      def printSolution( sol ): 
+    def printSolution(sol):
+        for i in sol:
+            for j in i:
+                print(str(j) + " ", end="")
+            print("")
 
-          for i in sol: 
-              for j in i: 
-                  print(str(j) + " ", end ="") 
-              print("") 
+    def isSafe(maze, x, y):
+        if 0 <= x < N and 0 <= y < M and maze[x][y] == 1:
+            return True
 
-      def isSafe( maze, x, y ): 
+        return False
 
-          if x >= 0 and x < N and y >= 0 and y < M and maze[x][y] == 1: 
-              return True
+    def solveMaze(maze):
+        sol = [[0 for _j in range(4)] for _i in range(5)]
+        if not solveMazeUtil(maze, 0, 0, sol):
+            print("-1")
+            return False
+        printSolution(sol)
+        return True
 
-          return False
+    def solveMazeUtil(maze, x, y, sol):
+        if x == N - 1 and y == M - 1 and maze[x][y] == 1:
+            sol[x][y] = 1
+            return True
 
-      def solveMaze( maze ): 
+        if isSafe(maze, x, y):
+            sol[x][y] = 1
 
-          sol = [ [ 0 for j in range(4) ] for i in range(5) ] 
+            if solveMazeUtil(maze, x, y + 1, sol):
+                return True
 
-          if solveMazeUtil(maze, 0, 0, sol) == False: 
-              print("-1"); 
-              return False
+            if solveMazeUtil(maze, x + 1, y, sol):
+                return True
 
-          printSolution(sol) 
-          return True
+            sol[x][y] = 0
+            return False
 
-      def solveMazeUtil(maze, x, y, sol): 
-
-          if x == N - 1 and y == M - 1 and maze[x][y]== 1: 
-              sol[x][y] = 1
-              return True
-
-          if isSafe(maze, x, y) == True: 
-              sol[x][y] = 1
-
-              if solveMazeUtil(maze, x, y + 1, sol) == True: 
-                  return True
-
-              if solveMazeUtil(maze, x + 1, y, sol) == True: 
-                  return True
-
-              sol[x][y] = 0
-              return False
+        solveMaze(main_maze)
 
 
-      if __name__ == "__main__":        
-          solveMaze(maze) 
-
-que_3_rat_maze()
+if __name__ == '__main__':
+    que_3_rat_maze()
