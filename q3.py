@@ -1,14 +1,17 @@
 def que_3_rat_maze():
-    N = int(input())
-    M = int(input())
+    N = int(input("Enter N \n"))
+    M = int(input("Enter M \n"))
 
     main_maze = []
 
     for row in range(0, N):
         list1 = []
         for cols in range(0, M):
-            list_elements = int(input())
-            list1.append(list_elements)
+            list_elements = str(input(f"Enter element \n"))
+            if list_elements == "X":
+                list1.append(1)
+            elif list_elements == "O":
+                list1.append(0)
         main_maze.append(list1)
         print("\n")
     print(main_maze)
@@ -16,8 +19,8 @@ def que_3_rat_maze():
     def printSolution(sol):
         for i in sol:
             for j in i:
-                print(str(j) + " ", end="")
-            print("")
+                print(j)
+            print("\n")
 
     def isSafe(maze, x, y):
         if 0 <= x < N and 0 <= y < M and maze[x][y] == 1:
