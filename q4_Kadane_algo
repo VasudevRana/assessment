@@ -1,0 +1,15 @@
+####Kadane's Method
+
+def kadane(A):
+    maxSoFar = 0
+    maxEndingHere = 0
+    for i in A:
+  		maxEndingHere = maxEndingHere + i
+  		maxEndingHere = max(maxEndingHere, 0)
+  		maxSoFar = max(maxSoFar, maxEndingHere)
+  	return maxSoFar
+
+if __name__ == '__main__':
+  	A = [-10, 5, 10]
+  	print("The sum of contiguous subset is", kadane(A))
+
