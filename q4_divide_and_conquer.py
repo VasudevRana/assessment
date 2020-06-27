@@ -37,4 +37,4 @@ if __name__ == '__main__':
             arr.append(int(input()))
             max_sum[j] = maxSubArraySum(arr, 0, n - 1)
 for i in range(0, t):
-    print(f"Maximum contiguous sum of array {j + 1} is ", max_sum[i])
+    print(f"Maximum contiguous sum of array {i + 1} is ", max_sum[i])
